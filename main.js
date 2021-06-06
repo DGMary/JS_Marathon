@@ -61,13 +61,11 @@ function changeHP(player){
     player.hp -=rundomiser(20);    
   } else {    
     !($arenas.appendChild(playerLose(player.name))); 
-    console.log(player.hp);
     player.hp = 0; 
     $randomButton.disabled = true;
   } 
 
   $playerLife.style.width = player.hp + '%';
-  console.log(player.hp);
 }
 
 function rundomiser(num) {
