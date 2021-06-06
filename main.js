@@ -58,7 +58,7 @@ function changeHP(player){
   const $playerLife = document.querySelector('.player'+ player.player +' .life');
 
   if(player.hp > 0) {
-    player.hp -=rundomNum(20);    
+    player.hp -=rundomiser(20);    
   } else {    
     !($arenas.appendChild(playerLose(player.name))); 
     console.log(player.hp);
@@ -70,7 +70,7 @@ function changeHP(player){
   console.log(player.hp);
 }
 
-function rundomNum(num) {
+function rundomiser(num) {
   const result = Math.ceil(Math.random() * num);
   return result;  
 }
