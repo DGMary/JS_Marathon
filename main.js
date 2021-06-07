@@ -56,13 +56,10 @@ function createPlayer( playerObj){
 }
 function changeHP(player){
   const $playerLife = document.querySelector('.player'+ player.player +' .life');
+  player.hp -= rundomiser(20); 
 
-  if(player.hp > 0) {
-    player.hp -=rundomiser(20);    
-  } else {    
-    !($arenas.appendChild(playerLose(player.name))); 
+  if(player.hp <= 0) {
     player.hp = 0; 
-    $randomButton.disabled = true;
   } 
 
   $playerLife.style.width = player.hp + '%';
@@ -73,9 +70,9 @@ function rundomiser(num) {
   return result;  
 }
 
-function playerLose(name) {
+function playerWins(name) {
   const $loseTitle = createElement('div', 'loseTitle');
-  $loseTitle.innerText = name + ' lose';
+  $loseTitle.innerText = name + ' wins';
 
   return $loseTitle;
 }
@@ -83,6 +80,19 @@ function playerLose(name) {
 $randomButton.addEventListener('click' , function() {
   changeHP(player1);
   changeHP(player2);
+
+  if(player1.hp === 0 || player2.hp === 0) {
+    $randomButton.disabled = true;
+  }
+
+  if(player1.hp === 0 && player1.hp < player2.hp) {
+    $arenas.appendChild(playerWins(player2.name));
+  } else if (player2.hp === 0 && player2.hp < player1.hp) {
+    $arenas.appendChild(playerWins(player1.name));
+  } else(player1.hp === 0 && player1.hp < player2.hp) {
+    $arenas.appendChild(playerWins(player2.name));
+  }
+
 });
 
 $arenas.appendChild(createPlayer(player1));
