@@ -113,7 +113,6 @@ function  createReloadButton(){
 
   $reloadButtonDiv.appendChild($reloadButton);
   $arenas.appendChild($reloadButtonDiv);
-
   $reloadButton.addEventListener('click' , function(){
     window.location.reload();
   })
