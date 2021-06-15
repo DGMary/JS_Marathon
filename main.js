@@ -116,9 +116,7 @@ function  createReloadButton(){
 $arenas.appendChild(createPlayer(player1));
 $arenas.appendChild(createPlayer(player2));
 
-function enemyAttack(){
-  const hit = ATTACK[random(3) - 1];
-  const defence = ATTACK[random(3) - 1];
+const enemyAttack = (hit = ATTACK[random(3) - 1], defence = ATTACK[random(3) - 1]) => {
   return {
     value: random(HIT[hit]),
     hit,
