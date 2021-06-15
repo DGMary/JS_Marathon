@@ -89,7 +89,7 @@ function createPlayer(playerObj){
 
 
 
-function playerWins(name) {
+const playerWins = (name) => {
   const $loseTitle = createElement('div', 'loseTitle');
   if(name) {
     $loseTitle.innerText = name + ' wins';
