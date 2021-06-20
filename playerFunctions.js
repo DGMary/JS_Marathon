@@ -8,7 +8,7 @@ function changeHP(num){
   }
   
   function elHP(){
-    const $playerLife = document.querySelector('.player'+ this.player +' .life');
+    const $playerLife = document.querySelector(`.player${this.player} .life`);
     return $playerLife;
   }
   
@@ -16,5 +16,9 @@ function changeHP(num){
     return (document.querySelector('.player'+ this.player +' .life').style.width = this.hp + '%');
   }
 
-export {changeHP, elHP, renderHP};
+  function attack() {
+    console.log(this.name + ' ' + 'Fight...')
+  }
+
+export {changeHP, elHP, renderHP, attack};
 

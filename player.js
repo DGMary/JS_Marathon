@@ -1,29 +1,25 @@
-import  {changeHP, elHP, renderHP}  from "./playerFunctions.js";
+import {changeHP, elHP, renderHP , attack} from "./playerFunctions.js";
 
-export const player1 = {
+const player1 = {
   player: 1,
   name: "Scorpion",
   hp: 100,
-  img: "http://reactmarathon-api.herokuapp.com/assets/scorpion.gif",
-  weapon: ["gun"],
-  attack: function(name){
-    console.log(name + 'Fight...');
-  },
-  changeHP,
+  img: "http://reactmarathon-api.herokuapp.com/assets/scorpion.gif",  
   elHP,
+  changeHP,
   renderHP,
+  attack,
 };
 
-export const player2 = {
+const player2 = {
   player: 2,
   name: "Kitana",
   hp: 100,
   img: "http://reactmarathon-api.herokuapp.com/assets/kitana.gif",
-  weapon: ["gun1"],
-  attack: function(name){
-    console.log(name + 'Fight...');
-  },
   changeHP,
   elHP,
   renderHP,
+  attack,
 };
+
+export {player1, player2};
